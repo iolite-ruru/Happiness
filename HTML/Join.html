@@ -2,33 +2,7 @@
 <html>
     <head>
         <title>Happiness!</title>
-        <style>
-
-            @font-face {
-                font-family: 'KOTRAHOPE';
-                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
-                font-weight: normal;
-                font-style: normal;
-            }   
-            div {
-                font-family: 'KOTRAHOPE';
-                text-align: center;
-            }
-            table {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            input[id*='user'] {
-                width: 150px;
-                height: 10px;
-                border: 0;
-                background-color: rgb(236, 236, 236);
-                border-radius: 30px;
-                padding: 7px;
-            }
-            
-            
-        </style>
+        <link href="../CSS/Join.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
@@ -43,7 +17,7 @@
                         이름
                     </td> 
                     <td>
-                        <input type="text" id="user_name"></br>
+                        <input type="text" id="user_name" name="user_name">
                     </td>
                 </tr>
                 <tr>
@@ -51,7 +25,7 @@
                         아이디
                     </td> 
                     <td>
-                        <input type="text" id="user_ID"></br>
+                        <input type="text" id="user_ID" name="user_ID">
                     </td>
                 </tr>
                 <tr>
@@ -59,13 +33,13 @@
                         비밀번호
                     </td> 
                     <td>
-                        <input type="password" id="user_PW">
+                        <input type="password" id="user_PW" name="user_PW">
                     </td>
                 </tr>
             </table>
         </div>
 
-        <div id="btn_sumit">
+        <div class="btn_sumit">
             <input type="button" value="가입하기" id="btn_Join_sumit"/>
         </div>
 
