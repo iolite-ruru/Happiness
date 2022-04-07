@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Happiness!</title>
+        <style>
+
+            @font-face {
+                font-family: 'KOTRAHOPE';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+                font-weight: normal;
+                font-style: normal;
+            }   
+            div {
+                font-family: 'KOTRAHOPE';
+                text-align: center;
+            }
+            table {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            input[id*='user'] {
+                width: 150px;
+                height: 10px;
+                border: 0;
+                background-color: rgb(236, 236, 236);
+                border-radius: 30px;
+                padding: 7px;
+            }
+            
+            
+        </style>
+    </head>
+
+    <body>
+
+        <div id="join_form">
+            <h1>회원 가입</h1>
+
+            <table>
+
+                <tr>
+                    <td>
+                        이름
+                    </td> 
+                    <td>
+                        <input type="text" id="user_name"></br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        아이디
+                    </td> 
+                    <td>
+                        <input type="text" id="user_ID"></br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        비밀번호
+                    </td> 
+                    <td>
+                        <input type="password" id="user_PW">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="btn_sumit">
+            <input type="button" value="가입하기" id="btn_Join_sumit"/>
+        </div>
+
+
+    </body>
+</html>
