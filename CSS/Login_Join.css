@@ -4,18 +4,22 @@
     font-weight: normal;
     font-style: normal;
 }   
-div {
+.parent {
     font-family: 'KOTRAHOPE';
     text-align: center;
+    position: relative;
 }
-table {
-    margin-left: auto;
-    margin-right: auto;
+.child{
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, 70%)
 }
 input[id*='user'] {
     margin: 5px;
     width: 150px;
     height: 10px;
+    font-size: 10sp;
     border: 0;
     font-size: 13px;
     background-color: rgb(236, 236, 236);
