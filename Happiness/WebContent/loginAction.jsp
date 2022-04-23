@@ -3,7 +3,7 @@
 <%@page import="dao.UserDAO"%>
 <%@page import="java.io.PrintWriter"%>
 <jsp:useBean id="user" class="dto.User" scope="page"/>
-<jsp:setProperty name="user" property="user_ID"/>
+<jsp:setProperty name="user" property="user_email"/>
 <jsp:setProperty name="user" property="user_PW"/>
 <!DOCTYPE html>
 <html>

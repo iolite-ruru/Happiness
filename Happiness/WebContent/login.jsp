@@ -2,11 +2,48 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>로그인</title>
-</head>
-<body>
+    <head>
+        <title>Happiness!</title>
+        <link href="CSS/Login_Join.css" rel="stylesheet" type="text/css" />
+    </head>
 
-</body>
+    <body>
+
+        <div class="parent">
+            <div class="child">
+<form method="post" action="loginAction.jsp">
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <h1>로그인</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            이메일
+                        </td> 
+                        <td>
+                            <input type="text" id="user_email" name="login_userID">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            비밀번호
+                        </td> 
+                        <td>
+                            <input type="password" id="user_PW" name="login_userPW">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="button" value="로그인" id="btn_Login"/>
+                        </td>
+                    </tr>
+                </table>
+</form>
+            </div>
+        </div>
+
+
+    </body>
 </html>

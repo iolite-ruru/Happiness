@@ -31,6 +31,7 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 	}
+	
 	public int login(String userEmail, String userPassword) {
 		String sql = "SELECT user_password FROM users WHERE user_email = ?";
 		try {
@@ -58,13 +59,13 @@ public class UserDAO {
 			pstmt.setString(1, user.getUserEmail());
 			pstmt.setString(2, user.getUserPassword());
 			pstmt.setString(3, user.getUserName());
-			pstmt.setString(4, user.getOpenDate());
 			
-			LocalDate localDate = LocalDate.now();
-			localDate.plusYears(1);
-			Date date = java.sql.Date.valueOf(localDate);
-
+			//LocalDate localDate = LocalDate.now();
+			//localDate.plusYears(1);
+			
+			Date date = java.sql.Date.valueOf(user.getOpenDate());
 			pstmt.setDate(5, date);
+			
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

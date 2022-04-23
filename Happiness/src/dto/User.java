@@ -1,44 +1,53 @@
 package dto;
 
+import java.time.LocalDate;
+
 public class User implements java.io.Serializable{
-	private String userEmail;
-	private String userPassword;
-	private String userName;
-	private String openDate;
+	private String user_email;
+	private String user_PW;
+	private String user_name;
+	private LocalDate openDate;
 	
 	public User() {
 	}
 	
-	public User(String userEmail, String userPassword, String userName, String openDate) {
-		this.userEmail = userEmail;
-		this.userPassword = userPassword;
-		this.userName = userName;
-		this.openDate = openDate;
+	public User(String userEmail, String userPassword) {
+		this.user_email = userEmail;
+		this.user_PW = userPassword;
+	}
+	
+	public User(String userEmail, String userPassword, String userName) {
+		this.user_email = userEmail;
+		this.user_PW = userPassword;
+		this.user_name = userName;
+		LocalDate localDate = LocalDate.now();
+		localDate.plusYears(1);
+		this.openDate = localDate;
 	}
 
 	public String getUserEmail() {
-		return userEmail;
+		return user_email;
 	}
 	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+		this.user_email = userEmail;
 	}
 	public String getUserPassword() {
-		return userPassword;
+		return user_PW;
 	}
 	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
+		this.user_PW = userPassword;
 	}
 	public String getUserName() {
-		return userName;
+		return user_name;
 	}
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.user_name = userName;
 	}
-	public String getOpenDate() {
+	public LocalDate getOpenDate() {
 		return openDate;
 	}
 	
-	public void setOpenDate(String openDate) {
+	public void setOpenDate(LocalDate openDate) {
 		this.openDate = openDate;
 	}	
 	
