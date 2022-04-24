@@ -1,12 +1,14 @@
+<%@page import="java.time.LocalDate"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="dao.UserDAO"%>
+<%@include file="dbconn.jsp" %>
 <%@page import="java.io.PrintWriter"%>
-<jsp:useBean id="user" class="dto.User" scope="page"/>
-<jsp:setProperty name="user" property="user_email"/>
-<jsp:setProperty name="user" property="user_PW"/>
-<jsp:setProperty name="user" property="user_name"/>
-<%-- <jsp:setProperty name="user" property="user_OpenDate"/> --%>
+<jsp:useBean id="user" class="dto.User" scope="session"/>
+<jsp:setProperty name="user" property="userName"/>
+<jsp:setProperty name="user" property="userEmail"/>
+<jsp:setProperty name="user" property="userPassword"/>
+<jsp:setProperty name="user" property="openDate"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,39 +19,34 @@
 	<%
 		request.setCharacterEncoding("UTF-8");
 		
-		if(user.getUserEmail() == null || user.getUserPassword() == null
-				|| user.getUserName() == null){
+/* 		if(user.getUserName() == null || user.getUserEmail() == null || user.getUserPassword() == null){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('모든 빈칸을 입력해주세요.')");
 			script.println("history.back()");
 			script.println("</script>");
-		}
-		
+		} */
+		/* LocalDate localDate = LocalDate.now();
+		localDate.plusYears(1);
+		user.setOpenDate(localDate); */
 		UserDAO userDAO = new UserDAO();
 		int result = userDAO.join(user);
 		
-		if(result == 1){
+		if(result == 1){ //가입 완료
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("location.href='main.jsp'");
+			script.println("location.href='index.jsp'");
 			script.println("</script>");
-		} else if(result == 0){
+		} else if(result == 0){ //이미 가입되어있는 이메일
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('비밀번호가 옳지 않습니다.')");
+			script.println("alert('이미 가입되어있는 이메일입니다.')");
 			script.println("history.back()");
 			script.println("</script>");
 		} else if(result == -1){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('가입되어있지 않는 이메일입니다.')");
-			script.println("history.back()");
-			script.println("</script>");
-		} else if(result == -2){
-			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("alert('DB 오류')");
+			script.println("alert('Error')"); //DB 오류
 			script.println("history.back()");
 			script.println("</script>");
 		}

@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Happiness!</title>
-        <link href="../CSS/Setting.css" rel="stylesheet" type="text/css" />
-    </head>
+<head>
+<title>Happiness!</title>
+<link href="../CSS/Setting.css" rel="stylesheet" type="text/css" />
+</head>
 
-    <body>
+<body>
 
-        <h1>(¹Ì¿Ï) Setting ÆäÀÌÁö</h1>
+	<h1>(미완) Setting HTML</h1>
 
-    </body>
+</body>
 </html>
