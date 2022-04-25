@@ -3,13 +3,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Happiness!</title>
-<link href="../CSS/Index.css" rel="stylesheet" type="text/css" />
+	<title>Happiness!</title>
+	<link href="../src/CSS/Index.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
-	<h1>(미완) index(start) 페이지</h1>
+	<div class="parent">
+		<div class="child">
+			
+			<h1 id="title">Happiness!</h1>
+
+			<table>
+				<tr>
+					<td>
+						<input type="button" id="btn_Join" value="회원가입" onclick="location.href='Join.html'"/>
+					</td>
+					<td>
+						<input type="button" id="btn_Login" value="로그인" onclick="location.href='Login.html'"/>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
 
 </body>
 </html>

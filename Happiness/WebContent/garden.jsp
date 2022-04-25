@@ -2,14 +2,14 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Happiness!</title>
-        <link href="../CSS/Garden.css" rel="stylesheet" type="text/css" />
-    </head>
+<head>
+    <title>Happiness!</title>
+    <link href="../src/CSS/Garden.css" rel="stylesheet" type="text/css" />
+</head>
 
-    <body>
+<body>
 
-        <h1>(미완) Garden 페이지</h1>
+    <h1>(미완) Garden 페이지</h1>
 
-    </body>
+</body>
 </html>

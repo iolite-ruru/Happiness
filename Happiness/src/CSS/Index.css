@@ -1,1 +1,44 @@
 /* index css */
+@font-face {
+    font-family: 'KOTRAHOPE';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}   
+body {
+    /* background-image: url('../IMG/sunset_cloud.jpg'); */
+}
+.parent {
+    font-family: 'KOTRAHOPE';
+    text-align: center;
+    position: relative;
+}
+.child{
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, 120%)
+}
+#title {
+    font-family: 'KOTRAHOPE';
+    font-size: 80px;
+    color: #FBFBFB;
+}
+table, td {
+    margin-left:auto; 
+    margin-right:auto;
+    border-collapse : collapse;
+}
+td {
+    padding-right: 15px;
+}
+input[id*='btn'] {
+    font-family: 'KOTRAHOPE';
+    width: 100px;
+    background-color: #F68989;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 50px;
+}
