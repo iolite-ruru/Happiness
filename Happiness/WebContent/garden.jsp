@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Happiness!</title>
-    <link href="../src/CSS/Garden.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/Garden.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
