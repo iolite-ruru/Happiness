@@ -36,8 +36,11 @@ public class UserDAO {
 		String sql = "SELECT user_password FROM users WHERE user_email = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
+			System.out.println("**"+user.getUserEmail()); //null
 			pstmt.setString(1, user.getUserEmail()); // "test"
+			pstmt.setString(1, user.getUserPassword()); 
 			rs = pstmt.executeQuery();
+			System.out.println(sql);
 			if (rs.next()) {
 				if (rs.getString(1).equals(user.getUserPassword())) { // "test"
 					return 1; // 로그인 성공
@@ -60,7 +63,7 @@ public class UserDAO {
 		 * //이미 가입되어 있는 이메일 } } catch (Exception e) { e.printStackTrace(); }
 		 */
 		
-		sql = "INSERT INTO USERS VALUES(?, ?, ?, to_date(?, 'yyyy.mm.dd'))";
+		sql = "INSERT INTO USERS VALUES(?, ?, ?, to_date(?, 'yyyy-mm-dd'))"; //포맷 확인
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user.getUserEmail());

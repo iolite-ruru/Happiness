@@ -3,7 +3,7 @@
 <%@page import="dao.UserDAO"%>
 <%@include file="dbconn.jsp"%>
 <%@page import="java.io.PrintWriter"%>
-<jsp:useBean id="user" class="dto.User" scope="session" />
+<jsp:useBean id="user" class="dto.User" scope="page" />
 <jsp:setProperty name="user" property="userEmail" />
 <jsp:setProperty name="user" property="userPassword" />
 <!DOCTYPE html>
@@ -17,6 +17,8 @@
 		request.setCharacterEncoding("UTF-8");
 
 		UserDAO userDAO = new UserDAO();
+		//System.out.println(user.getUserEmail());
+		System.out.println(user.getUserPassword());
 		int result = userDAO.login(user);
 
 		if (result == 1) {
