@@ -17,8 +17,9 @@
 		request.setCharacterEncoding("UTF-8");
 
 		UserDAO userDAO = new UserDAO();
+		//Debug
 		//System.out.println(user.getUserEmail());
-		System.out.println(user.getUserPassword());
+		//System.out.println(user.getUserPassword());
 		int result = userDAO.login(user);
 
 		if (result == 1) {

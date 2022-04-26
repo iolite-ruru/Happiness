@@ -32,7 +32,7 @@
 					</tr>
 					<tr>
 						<td>오픈날짜</td>
-						<td><input type="date" id="openDate"></td>
+						<td><input type="date" id="openDate" name="openDate"></td>
 					</tr>
 					<tr>
 						<td colspan="2">
