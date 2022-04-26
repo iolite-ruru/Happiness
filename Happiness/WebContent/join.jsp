@@ -30,10 +30,10 @@
 						<td><input type="password" id="userPassword"
 							name="userPassword"></td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td>오픈날짜</td>
 						<td><input type="date" id="openDate" name="openDate"></td>
-					</tr>
+					</tr> -->
 					<tr>
 						<td colspan="2">
 							<button type="submit" id="btn_Join">가입하기</button>

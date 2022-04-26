@@ -8,7 +8,7 @@
 <jsp:setProperty name="user" property="userName" />
 <jsp:setProperty name="user" property="userEmail" />
 <jsp:setProperty name="user" property="userPassword" />
-<jsp:setProperty name="user" property="openDate" />
+<%-- <jsp:setProperty name="user" property="openDate" /> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,11 +19,10 @@
 	<%
 		request.setCharacterEncoding("UTF-8");
 
-/*
-		LocalDate localDate = LocalDate.now();
-		localDate.plusYears(1);
-		user.setOpenDate(localDate);
-		System.out.println(user.getOpenDate());
+/* 		LocalDate localDate = LocalDate.now();
+		user.setOpenDate(localDate.plusYears(1));
+		//Debug
+		System.out.println(user.getOpenDate()); */
 
 		if (user.getUserName() == null || user.getUserEmail() == null || user.getUserPassword() == null) {
 			PrintWriter script = response.getWriter();
@@ -32,7 +31,7 @@
 			script.println("history.back()");
 			script.println("</script>");
 		}
-*/
+
 		
 		UserDAO userDAO = new UserDAO();
 

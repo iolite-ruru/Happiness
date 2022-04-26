@@ -77,18 +77,17 @@ public class UserDAO {
 			pstmt.setString(2, user.getUserPassword());
 			pstmt.setString(3, user.getUserName());
 
-//			LocalDate localDate = LocalDate.now();
-//			localDate.plusYears(1);
-//			user.setOpenDate(localDate);
-
-			// Date date = java.sql.Date.valueOf(user.getOpenDate()); //substring으로 값 잘라서
-			// 넣기..?
-			// pstmt.setDate(4, date);
-			//pstmt.setString(4, localDate.toString());
-			pstmt.setString(4, "2022-12-31");
+			LocalDate localDate = LocalDate.now();
+			user.setOpenDate(localDate.plusYears(1));
+			
+			//Debug
+//			System.out.println(localDate.plusYears(1));
+//			System.out.println(localDate);
+			
+			pstmt.setString(4, user.getOpenDate().toString());
 			pstmt.executeUpdate();
-			// pstmt.close(); //JDBC 자원 해제. 일단 추가해둠.
-
+			// pstmt.close(); //JDBC 자원 해제
+			
 			return 1; // 로그인 완료
 		} catch (Exception e) {
 			e.printStackTrace();
