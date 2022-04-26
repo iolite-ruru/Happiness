@@ -36,10 +36,14 @@ public class UserDAO {
 		String sql = "SELECT user_password FROM users WHERE user_email = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, user.getUserEmail()); // "test"
+			// Debug
+			// System.out.println("**"+user.getUserEmail());
+			pstmt.setString(1, user.getUserEmail());
+			pstmt.setString(1, user.getUserPassword());
 			rs = pstmt.executeQuery();
+			System.out.println(sql);
 			if (rs.next()) {
-				if (rs.getString(1).equals(user.getUserPassword())) { // "test"
+				if (rs.getString(1).equals(user.getUserPassword())) {
 					return 1; // 로그인 성공
 				} else {
 					return 0;
@@ -54,32 +58,37 @@ public class UserDAO {
 
 	public int join(User user) {
 		String sql = "SELECT * FROM users WHERE user_email = ?";
-		/*
-		 * try { pstmt = conn.prepareStatement(sql); pstmt.setString(1,
-		 * user.getUserEmail()); rs = pstmt.executeQuery(); if (rs.next()) { return 0;
-		 * //이미 가입되어 있는 이메일 } } catch (Exception e) { e.printStackTrace(); }
-		 */
-		
-		sql = "INSERT INTO USERS VALUES(?, ?, ?, to_date(?, 'yyyy.mm.dd'))";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, user.getUserEmail());
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				return 0; // 이미 가입되어 있는 이메일
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		sql = "INSERT INTO USERS VALUES(?, ?, ?, to_date(?, 'yyyy-mm-dd'))"; // 포맷 확인
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user.getUserEmail());
 			pstmt.setString(2, user.getUserPassword());
 			pstmt.setString(3, user.getUserName());
-			
-			
+
 			LocalDate localDate = LocalDate.now();
-			localDate.plusYears(1);
-			user.setOpenDate(localDate);
-			 
+			user.setOpenDate(localDate.plusYears(1));
 			
-			//Date date = java.sql.Date.valueOf(user.getOpenDate()); //substring으로 값 잘라서 넣기..?
-			//pstmt.setDate(4, date);
-			pstmt.setString(4, localDate.toString());
+			//Debug
+//			System.out.println(localDate.plusYears(1));
+//			System.out.println(localDate);
+			
+			pstmt.setString(4, user.getOpenDate().toString());
 			pstmt.executeUpdate();
-			//pstmt.close(); //JDBC 자원 해제. 일단 추가해둠.
+			// pstmt.close(); //JDBC 자원 해제
 			
-			return 1; //로그인 완료
+			return 1; // 로그인 완료
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
