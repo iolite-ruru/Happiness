@@ -17,10 +17,10 @@
 			<table>
 				<tr>
 					<td>
-						<input type="button" id="btn_Join" value="회원가입" onclick="location.href='Join.jsp'"/>
+						<input type="button" id="btn_Join" value="회원가입" onclick="location.href='join.jsp'"/>
 					</td>
 					<td>
-						<input type="button" id="btn_Login" value="로그인" onclick="location.href='Login.jsp'"/>
+						<input type="button" id="btn_Login" value="로그인" onclick="location.href='login.jsp'"/>
 					</td>
 				</tr>
 			</table>
