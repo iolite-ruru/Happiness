@@ -20,12 +20,12 @@ public class UserDAO {
 
 	public UserDAO() {
 		try {
-			String dbURL = "jdbc:oracle:thin:@localhost:1521:XE";
-			String dbID = "system";
-			String dbPassword = "0812";
+			String dbURL = "jdbc:mysql://127.0.0.1:3306/happiness?characterEncoding=utf8&serverTimezone=Asia/Seoul";
+			String dbID = "happiness_admin";
+			String dbPassword = "0812a";
 
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection(dbURL, dbID, dbPassword); //***********
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -39,7 +39,7 @@ public class UserDAO {
 			// Debug
 			// System.out.println("**"+user.getUserEmail());
 			pstmt.setString(1, user.getUserEmail());
-			pstmt.setString(1, user.getUserPassword());
+			//pstmt.setString(1, user.getUserPassword());
 			rs = pstmt.executeQuery();
 			System.out.println(sql);
 			if (rs.next()) {
@@ -58,7 +58,9 @@ public class UserDAO {
 
 	public int join(User user) {
 		String sql = "SELECT * FROM users WHERE user_email = ?";
-
+		System.out.println("join 함수 호출");
+		System.out.println(user.getOpenDate());
+		System.out.println(user.getUserEmail());
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user.getUserEmail());
@@ -70,22 +72,19 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 
-		sql = "INSERT INTO USERS VALUES(?, ?, ?, to_date(?, 'yyyy-mm-dd'))"; // 포맷 확인
+		sql = "INSERT INTO USERS VALUES(?, ?, ?, str_to_date(?, '%Y-%m-%d'))"; // 포맷 확인
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user.getUserEmail());
-			pstmt.setString(2, user.getUserPassword());
-			pstmt.setString(3, user.getUserName());
+			pstmt.setString(2, user.getUserName());
+			pstmt.setString(3, user.getUserPassword());
 
 			LocalDate localDate = LocalDate.now();
 			user.setOpenDate(localDate.plusYears(1));
-			
-			//Debug
-//			System.out.println(localDate.plusYears(1));
-//			System.out.println(localDate);
+			System.out.println("date: "+user.getOpenDate());
 			
 			pstmt.setString(4, user.getOpenDate().toString());
-			pstmt.executeUpdate();
+			pstmt.executeUpdate();					//*****************************
 			// pstmt.close(); //JDBC 자원 해제
 			
 			return 1; // 로그인 완료

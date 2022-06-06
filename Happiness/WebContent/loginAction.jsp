@@ -18,14 +18,15 @@
 
 		UserDAO userDAO = new UserDAO();
 		//Debug
-		//System.out.println(user.getUserEmail());
-		//System.out.println(user.getUserPassword());
+		System.out.println(user.getUserEmail());
+		System.out.println(user.getUserPassword());
 		int result = userDAO.login(user);
 
 		if (result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("location.href='index.jsp'");
+			script.println("location.href='garden.jsp'");
+			script.println("alert('로그인 성공!')");
 			script.println("</script>");
 		} else if (result == 0) {
 			PrintWriter script = response.getWriter();

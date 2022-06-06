@@ -4,11 +4,11 @@
 <%
 	Connection conn = null;
 	try {
-		String dbURL = "jdbc:oracle:thin:@localhost:1521:XE";
-		String dbID = "system";
-		String dbPassword = "0812";
+		String dbURL = "jdbc:mysql://127.0.0.1:3306/happiness?characterEncoding=utf8&serverTimezone=Asia/Seoul";
+		String dbID = "happiness_admin";
+		String dbPassword = "0812a";
 
-		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 
 	} catch (SQLException ex) {

@@ -33,6 +33,7 @@
 					</tr>
 				</table>
 			</form>
+			<input type="button" id="btn_Join" value="회원가입" onclick="location.href='join.jsp'"/>
         </div>
     </div>
 
