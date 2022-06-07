@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Happiness!</title>
+</head>
+<body>
+	<div class="parent">
+		<div class="child">
+
+			<h1 id="title">글 작성</h1>
+			<form method="post" action="writePostAction.jsp">
+				<table>
+					<tr>
+						<td>제목</td>
+						<td><input type="text" id="postTitle" name="postTitle"></td>
+					</tr>
+					<tr>
+						<td>본문</td>
+						<td><textarea id="postBody" name="postBody" rows="40"
+								cols="80">본문 입력</textarea></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="checkbox" name="isPublic"
+							value="isPublic" />글 공개</td>
+					<tr>
+						<td colspan="2">
+							<button type="submit" id="btnUpload">작성완료</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
