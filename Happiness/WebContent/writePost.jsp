@@ -14,19 +14,20 @@
 			<form method="post" action="writePostAction.jsp">
 				<table>
 					<tr>
-						<td>제목</td>
-						<td><input type="text" id="postTitle" name="postTitle"></td>
+						<!-- <td>제목</td> -->
+						<td><input type="text" id="postTitle" name="postTitle"
+							placeholder="제목"></td>
 					</tr>
 					<tr>
-						<td>본문</td>
+						<!-- <td>본문</td> -->
 						<td><textarea id="postBody" name="postBody" rows="40"
-								cols="80">본문 입력</textarea></td>
+								cols="80" placeholder="본문"></textarea></td>
 					</tr>
 					<tr>
-						<td colspan="2"><input type="checkbox" name="isPublic"
-							value="isPublic" />글 공개</td>
+						<td><input type="checkbox" name="isPublic" value="isPublic" />글
+							공개 여부</td>
 					<tr>
-						<td colspan="2">
+						<td>
 							<button type="submit" id="btnUpload">작성완료</button>
 						</td>
 					</tr>

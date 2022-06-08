@@ -3,7 +3,7 @@ package dto;
 import java.time.LocalDate;
 
 public class Post {
-	private String postId;
+	private int postId;
 	private boolean isPublic;
 	private String postTitle;
 	private String postBody;
@@ -14,11 +14,11 @@ public class Post {
 		
 	}
 
-	public String getPostId() {
+	public int getPostId() {
 		return postId;
 	}
 
-	public void setPostId(String postId) {
+	public void setPostId(int postId) {
 		this.postId = postId;
 	}
 
