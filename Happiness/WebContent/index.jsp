@@ -4,7 +4,7 @@
 <html>
 <head>
 	<title>Happiness!</title>
-	<link href="CSS/Index.css" rel="stylesheet" type="text/css" />
+	<link href="resources/CSS/Index.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -17,10 +17,10 @@
 			<table>
 				<tr>
 					<td>
-						<input type="button" id="btn_Join" value="회원가입" onclick="location.href='join.jsp'"/>
+						<input type="button" id="btnJoin" value="회원가입" onclick="location.href='join.jsp'"/>
 					</td>
 					<td>
-						<input type="button" id="btn_Login" value="로그인" onclick="location.href='login.jsp'"/>
+						<input type="button" id="btnLogin" value="로그인" onclick="location.href='login.jsp'"/>
 					</td>
 				</tr>
 			</table>

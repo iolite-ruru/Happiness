@@ -4,7 +4,7 @@
 <%
 	Connection conn = null;
 	try {
-		String dbURL = "jdbc:mysql://127.0.0.1:3306/happiness?characterEncoding=utf8&serverTimezone=Asia/Seoul";
+		String dbURL = "jdbc:mysql://127.0.0.1:3306/happiness?characterEncoding=utf-8&serverTimezone=Asia/Seoul";
 		String dbID = "happiness_admin";
 		String dbPassword = "0812a";
 

@@ -36,12 +36,13 @@ public class UserDAO {
 		String sql = "SELECT user_password FROM users WHERE user_email = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, user.getUserEmail());
+			rs = pstmt.executeQuery();
+			
 			// Debug
 			// System.out.println("**"+user.getUserEmail());
-			pstmt.setString(1, user.getUserEmail());
-			//pstmt.setString(1, user.getUserPassword());
-			rs = pstmt.executeQuery();
-			System.out.println(sql);
+			//System.out.println(sql);
+			
 			if (rs.next()) {
 				if (rs.getString(1).equals(user.getUserPassword())) {
 					return 1; // 로그인 성공
@@ -58,9 +59,12 @@ public class UserDAO {
 
 	public int join(User user) {
 		String sql = "SELECT * FROM users WHERE user_email = ?";
-		System.out.println("join 함수 호출");
-		System.out.println(user.getOpenDate());
-		System.out.println(user.getUserEmail());
+		
+		// Debug
+		// System.out.println("join 함수 호출");
+		// System.out.println(user.getOpenDate());
+		// System.out.println(user.getUserEmail());
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user.getUserEmail());
@@ -81,7 +85,9 @@ public class UserDAO {
 
 			LocalDate localDate = LocalDate.now();
 			user.setOpenDate(localDate.plusYears(1));
-			System.out.println("date: "+user.getOpenDate());
+			
+			//Debug
+			//System.out.println("date: "+user.getOpenDate());
 			
 			pstmt.setString(4, user.getOpenDate().toString());
 			pstmt.executeUpdate();					//*****************************
@@ -93,4 +99,5 @@ public class UserDAO {
 		}
 		return -1; // DB 오류
 	}
+	
 }
