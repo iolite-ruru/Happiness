@@ -3,7 +3,7 @@
 %>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="dao.PostDAO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <jsp:useBean id="post" class="dto.Post" scope="session" />
 <jsp:setProperty name="post" property="postTitle" />
