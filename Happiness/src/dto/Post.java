@@ -3,15 +3,24 @@ package dto;
 import java.time.LocalDate;
 
 public class Post {
+	private String userEmail;
 	private int postId;
 	private boolean isPublic;
 	private String postTitle;
 	private String postBody;
 	private LocalDate writeDate;
 	private int postIcon;
-	
+
 	public Post() {
-		
+
+	}
+
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 
 	public int getPostId() {
@@ -61,7 +70,5 @@ public class Post {
 	public void setPostIcon(int postIcon) {
 		this.postIcon = postIcon;
 	}
-	
-	
-	
+
 }

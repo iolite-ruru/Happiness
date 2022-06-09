@@ -10,18 +10,31 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 
+	String userEmail = null;
+	if(session.getAttribute("userEmail") != null){
+		userEmail = (String) session.getAttribute("userEmail");
+	}
+	
+	if(userEmail != null){
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('이미 로그인이 되어있습니다.')");
+		script.println("location.href='garden.jsp");
+		script.println("</script>");
+	}
+
 	UserDAO userDAO = new UserDAO();
-	//Debug
-	System.out.println(user.getUserEmail());
-	System.out.println(user.getUserPassword());
 	int result = userDAO.login(user);
 
 	if (result == 1) {
+		session.setAttribute("userEmail", user.getUserEmail());
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("location.href='garden.jsp'");
 		script.println("alert('로그인 성공!')");
 		script.println("</script>");
+
+		response.sendRedirect("garden.jsp");
 	} else if (result == 0) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");

@@ -7,12 +7,13 @@ function CheckJoin() {
 	// alert("validation.js 호출");
 
 	if (!userName || !userEmail || !userPassword || !userPasswordRe) {
+		alert("입력 칸이 비어 있어서는 안됩니다.");
 		return false;
 	}
 
 	// 이름
 	if (!Check(/[a-zA-Z가-힣0-9]{2,12}/, userName)) {
-		alert("[이름]2~12자 내의 문자를 입력하세요");
+		alert("[이름]2~12자 내의 문자, 숫자만 입력할 수 있습니다.");
 		document.joinForm.userName.select();
 		document.joinForm.userName.focus();
 		return false;
@@ -20,7 +21,7 @@ function CheckJoin() {
 
 	// 이메일
 	if (!Check(/[a-z0-9]{2,}@[a-z0-9-]{2,}\.[a-z0-9]{2,}/i, userEmail)) {
-		alert("[이메일]유효한 이메일을 입력해주세요.");
+		alert("[이메일]유효한 이메일 주소가 아닙니다.");
 		document.joinForm.userEmail.select();
 		document.joinForm.userEmail.focus();
 		return false;
@@ -28,7 +29,7 @@ function CheckJoin() {
 
 	// 비밀번호
 	if (!Check(/[a-z0-9]{8,20}/, userPassword)) {
-		alert("[비밀번호]\n8~20자 내의 영소문자, 숫자만 입력해주세요.");
+		alert("[비밀번호]\n8~20자 내의 영소문자, 숫자만 입력할 수 있습니다.");
 		document.joinForm.userPassword.select();
 		document.joinForm.userPassword.focus();
 		return false;

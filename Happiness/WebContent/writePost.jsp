@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,25 +10,25 @@
 	<div class="parent">
 		<div class="child">
 
-			<h1 id="title">±Û ÀÛ¼º</h1>
+			<h1 id="title">ê¸€ ìž‘ì„±</h1>
 			<form method="post" action="writePostAction.jsp">
 				<table>
 					<tr>
-						<!-- <td>Á¦¸ñ</td> -->
+						<!-- <td>ì œëª©</td> -->
 						<td><input type="text" id="postTitle" name="postTitle"
-							placeholder="Á¦¸ñ"></td>
+							placeholder="ì œëª©" maxlength="20"></td>
 					</tr>
 					<tr>
-						<!-- <td>º»¹®</td> -->
+						<!-- <td>ë³¸ë¬¸</td> -->
 						<td><textarea id="postBody" name="postBody" rows="40"
-								cols="80" placeholder="º»¹®"></textarea></td>
+								cols="80" placeholder="ë³¸ë¬¸" maxlength="1000"></textarea></td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="isPublic" value="isPublic" />±Û
-							°ø°³ ¿©ºÎ</td>
+						<td><input type="checkbox" name="isPublic" value="isPublic" />ê¸€
+							ê³µê°œ ì—¬ë¶€</td>
 					<tr>
 						<td>
-							<button type="submit" id="btnUpload">ÀÛ¼º¿Ï·á</button>
+							<button type="submit" id="btnUpload">ìž‘ì„±ì™„ë£Œ</button>
 						</td>
 					</tr>
 				</table>
