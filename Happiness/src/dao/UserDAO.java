@@ -33,18 +33,16 @@ public class UserDAO {
 	}
 
 	public int login(User user) {
-		String sql = "SELECT user_password FROM users WHERE user_email = ?";
+		String sql = "SELECT user_password, user_name, open_date FROM users WHERE user_email = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user.getUserEmail());
 			rs = pstmt.executeQuery();
 			
-			// Debug
-			// System.out.println("**"+user.getUserEmail());
-			//System.out.println(sql);
-			
 			if (rs.next()) {
 				if (rs.getString(1).equals(user.getUserPassword())) {
+					user.setUserName(rs.getString(2));
+					user.setOpenDate(rs.getDate(3).toLocalDate());
 					return 1; // 로그인 성공
 				} else {
 					return 0;

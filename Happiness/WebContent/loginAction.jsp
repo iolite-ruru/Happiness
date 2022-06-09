@@ -11,8 +11,10 @@
 	request.setCharacterEncoding("UTF-8");
 
 	String userEmail = null;
+	String userName = null;
 	if(session.getAttribute("userEmail") != null){
 		userEmail = (String) session.getAttribute("userEmail");
+		userName = (String) session.getAttribute("userName");
 	}
 	
 	if(userEmail != null){
@@ -28,6 +30,7 @@
 
 	if (result == 1) {
 		session.setAttribute("userEmail", user.getUserEmail());
+		session.setAttribute("userName", user.getUserName());
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("location.href='garden.jsp'");
