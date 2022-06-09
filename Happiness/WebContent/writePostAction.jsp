@@ -19,11 +19,7 @@
 	}
 
 	if (userEmail == null) {
-		PrintWriter script = response.getWriter();
-		script.println("<script>");
-		script.println("alert('로그인 후에 이 페이지를 이용할 수 있습니다.')");
-		script.println("location.href='index.jsp");
-		script.println("</script>");
+		response.sendRedirect("index.jsp");
 	}
 	
 	if (post.getPostTitle() == null || post.getPostBody() == null) {
