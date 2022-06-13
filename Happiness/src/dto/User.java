@@ -12,6 +12,9 @@ public class User implements java.io.Serializable {
 	private LocalDate openDate;
 
 	public User() {
+		userEmail = null;
+		userPassword = null;
+		userName = null;
 	}
 
 	public User(String userEmail, String userPassword) {

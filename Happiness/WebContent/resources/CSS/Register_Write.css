@@ -5,3 +5,50 @@
     font-weight: normal;
     font-style: normal;
 }   
+body {
+    font-family: 'KOTRAHOPE';
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    background-image: url('../IMG/sunset_cloud.jpg');
+}
+.parent {
+    font-family: 'KOTRAHOPE';
+    text-align: center;
+    position: relative;
+}
+.child{
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, 10%)
+}
+
+.child #openDate{
+    position: absolute; 
+    left: 10%; 
+    top: 22%; 
+    transform: translate(-50%, 10%)
+}
+
+.child #postBody{
+    position: relative; 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, 8%)
+}
+
+button {
+    font-family: 'KOTRAHOPE';
+    width: 100px;
+    background-color: #F68989;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 50px;
+}
+input {
+    outline: none;
+    margin-bottom: 10px;
+}

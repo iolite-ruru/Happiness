@@ -18,9 +18,9 @@
 		userEmail = (String) session.getAttribute("userEmail");
 	}
 
-	if (userEmail == null) {
+/* 	if (userEmail == null) {
 		response.sendRedirect("index.jsp");
-	}
+	} */
 	
 	if (post.getPostTitle() == null || post.getPostBody() == null) {
 		PrintWriter script = response.getWriter();

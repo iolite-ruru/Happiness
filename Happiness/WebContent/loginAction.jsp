@@ -1,3 +1,4 @@
+<%@page import="dto.User"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="dao.UserDAO"%>
@@ -10,14 +11,14 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 
-	String userEmail = null;
-	String userName = null;
-	if(session.getAttribute("userEmail") != null){
-		userEmail = (String) session.getAttribute("userEmail");
-		userName = (String) session.getAttribute("userName");
+	User sessionUser = new User();
+	//String userEmail;
+	
+	if((User)(session.getAttribute("User")) != null){
+		sessionUser = (User) session.getAttribute("User");
 	}
 	
-	if(userEmail != null){
+	if(sessionUser.getUserEmail() != null){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('이미 로그인이 되어있습니다.')");
@@ -29,8 +30,8 @@
 	int result = userDAO.login(user);
 
 	if (result == 1) {
-		session.setAttribute("userEmail", user.getUserEmail());
-		session.setAttribute("userName", user.getUserName());
+		session.setAttribute("User", user);
+		
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("location.href='garden.jsp'");
