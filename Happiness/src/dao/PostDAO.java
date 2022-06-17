@@ -45,7 +45,7 @@ public class PostDAO {
 
 			// pstmt.setInt(1, null); //post_id (AUTO_INCREMENT 설정함)
 			// System.out.println(post.getUserEmail());
-			pstmt.setString(1, post.getUserEmail()); // error
+			pstmt.setString(1, "s2023@e-mirim.hs.kr"); // error //post.getUserEmail()
 			pstmt.setBoolean(2, post.isPublic()); // *********** 후에 수정해야할 부분(Boolear, String)
 			pstmt.setString(3, post.getPostTitle());
 			pstmt.setString(4, post.getPostBody());

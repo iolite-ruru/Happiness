@@ -3,7 +3,6 @@ package dto;
 import java.time.LocalDate;
 
 public class User implements java.io.Serializable {
-	//일단 임의대로 직렬화 함
 	private static final long serialVersionUID = -4274700572038677000L;
 	
 	private String userEmail;
@@ -12,9 +11,6 @@ public class User implements java.io.Serializable {
 	private LocalDate openDate;
 
 	public User() {
-		userEmail = null;
-		userPassword = null;
-		userName = null;
 	}
 
 	public User(String userEmail, String userPassword) {

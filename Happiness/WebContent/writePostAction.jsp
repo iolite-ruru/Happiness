@@ -1,3 +1,5 @@
+
+<%@page import="dto.User"%>
 <%
 	request.setCharacterEncoding("utf-8");
 %>
@@ -11,17 +13,16 @@
 
 <%
 	request.setCharacterEncoding("UTF-8");
-	//System.out.println(user.getUserEmail());
-
+	User sessionUser = new User();
 	String userEmail = null;
-	if (session.getAttribute("userEmail") != null) {
-		userEmail = (String) session.getAttribute("userEmail");
+	String userName = null;
+
+	if (session.getAttribute("User") != null) {
+		sessionUser = (User) session.getAttribute("User");
+	} else {
+		response.sendRedirect("index.jsp");
 	}
 
-/* 	if (userEmail == null) {
-		response.sendRedirect("index.jsp");
-	} */
-	
 	if (post.getPostTitle() == null || post.getPostBody() == null) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
@@ -29,21 +30,19 @@
 		script.println("history.back()");
 		script.println("</script>");
 	}
-	
-	
-//document.getElementById('img').src = "../IMG/flower.png";
+
+	//document.getElementById('img').src = "../IMG/flower.png";
 	post.setUserEmail(userEmail);
-	
-	System.out.println("PostDAO() 호출 전");	
+
+	System.out.println("PostDAO() 호출 전");
 	PostDAO postDAO = new PostDAO();
 	System.out.println("PostDAO() 호출 후");
-	System.out.println("post.email: "+ post.getUserEmail());
-	System.out.println("post.title: "+ post.getPostTitle());
-	System.out.println("post.body: "+ post.getPostBody());
-	System.out.println("post.isPublic: "+ post.isPublic());
-	
-	int result = postDAO.writePost(post);
+	System.out.println("post.email: " + post.getUserEmail());
+	System.out.println("post.title: " + post.getPostTitle());
+	System.out.println("post.body: " + post.getPostBody());
+	System.out.println("post.isPublic: " + post.isPublic());
 
+	int result = postDAO.writePost(post);
 	if (result == 1) { //가입 완료
 		PrintWriter script = response.getWriter();
 		script.println("<script>");

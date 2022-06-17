@@ -9,6 +9,8 @@
 <html>
 <head>
 <title>Happiness!</title>
+<link href="resources/CSS/Login_Join.css" rel="stylesheet"
+	type="text/css" />
 <style>
 @font-face {
 	font-family: 'KOTRAHOPE';
@@ -68,7 +70,7 @@ body {
 			<h1
 				style="color: rgb(230, 199, 24); text-shadow: 1px 1px 3px rgb(255, 255, 255);">
 				<span style="font-size: 63px; color: rgb(255, 122, 14);"
-					id="user_name"><%=sessionUser.getUserName()%></span> &nbsp;<span
+					id="user_name">이미림</span> &nbsp;<span
 					style="font-size: 45px;">님, 오늘의 행복을 작성하세요 !</span>
 			</h1>
 		</div>
@@ -76,16 +78,19 @@ body {
 		<div
 			style='position: absolute; top: 0px; left: 0px; z-index: 2; width: 70px; text-align: center; left: 29%; top: 13%; transform: translate(60%, 70%); background-color: rgb(255, 255, 255); padding: 5px; border-radius: 30px; font-size: 18px'>
 			열람일</div>
-
-		<%-- <%
-Period period = LocalDate.now().until(sessionUser.getOpenDate());//Period.between(LocalDate.now(), sessionUser.getOpenDate());
-
-%> --%>
+		<div
+			style='position: absolute; top: 0px; left: 0px; z-index: 2; left: 33%; top: 0%; transform: translate(64%, 41%); text-shadow: 1px 1px 3px rgb(255, 255, 255)'>
+			<h2 style="font-size: 60px; color: rgb(63, 121, 207);" id="user_Dday">
+				D-<%= ChronoUnit.DAYS.between(LocalDate.now(), sessionUser.getOpenDate())%></h2>
+		</div>
+		<%-- 
+		<%Period period = LocalDate.now().until(sessionUser.getOpenDate());//Period.between(LocalDate.now(), sessionUser.getOpenDate());%>
+ 
 		<div
 			style='position: absolute; top: 0px; left: 0px; z-index: 2; left: 33%; top: 0%; transform: translate(64%, 41%); text-shadow: 1px 1px 3px rgb(255, 255, 255);'>
-			<h2 style="font-size: 60px; color: rgb(63, 121, 207);" id="user_Dday">
+			<%-- <h2 style="font-size: 60px; color: rgb(63, 121, 207);" id="user_Dday">
 				D-<%=ChronoUnit.DAYS.between(LocalDate.now(), sessionUser.getOpenDate())%></h2>
-		</div>
+		</div> --%>
 
 		<div
 			style='position: absolute; top: 0px; left: 0px; z-index: 2; left: 47%; top: 33%; transform: translate(100%, 10%)'>
@@ -106,42 +111,37 @@ Period period = LocalDate.now().until(sessionUser.getOpenDate());//Period.betwee
 
 		<div
 			style='position: absolute; top: 0px; left: 0px; z-index: 2; left: 15%; top: 34%; transform: translate(57%, 50%);'>
-			<span style="font-size: 25px; margin-right: 67px;" id="title_1">제목
-				1</span> <span style="font-size: 25px; margin-right: 67px;" id="title_2">제목
-				2</span> <span style="font-size: 25px; margin-right: 67px;" id="title_3">제목
-				3</span> <span style="font-size: 25px; margin-right: 67px;" id="title_4">제목
-				4</span> <span style="font-size: 25px; margin-right: 67px;" id="title_5">제목
-				5</span>
+			<span style="font-size: 25px; margin-right: 67px;" id="title_1">제목1</span>
+			<span style="font-size: 25px; margin-right: 67px;" id="title_2">제목2</span>
+			<span style="font-size: 25px; margin-right: 67px;" id="title_3">제목3</span>
+			<span style="font-size: 25px; margin-right: 67px;" id="title_4">제목4</span>
+			<span style="font-size: 25px; margin-right: 67px;" id="title_5">제목5</span>
 		</div>
 
 		<div
 			style='position: absolute; top: 0px; left: 0px; z-index: 2; left: 15%; top: 40%; transform: translate(50%, 50%)'>
-			<img src="resources/IMG/sprout.png" width="120" height="90" /> <img
-				src="resources/IMG/sprout.png" width="120" height="90" /> <img
-				src="resources/IMG/sprout.png" width="120" height="90" /> <img
-				src="resources/IMG/sprout.png" width="120" height="90" /> <img
-				src="resources/IMG/sprout.png" width="120" height="90" />
+			<img src="resources/IMG/sprout.png" width="120" height="90" />
+			<img src="resources/IMG/sprout.png" width="120" height="90" />
+			<img src="resources/IMG/sprout.png" width="120" height="90" />
+			<img src="resources/IMG/sprout.png" width="120" height="90" />
+			<img src="resources/IMG/sprout.png" width="120" height="90" />
 		</div>
 
 		<div
 			style='position: absolute; top: 0px; left: 0px; z-index: 2; left: 15%; top: 60%; transform: translate(50%, 50%)'>
-			<img src="resources/IMG/sprout.png" width="120" height="90" /> <img
-				src="resources/IMG/sprout.png" width="120" height="90" /> <img
-				src="resources/IMG/sprout.png" width="120" height="90" /> <img
-				src="resources/IMG/sprout.png" width="120" height="90" /> <img
-				src="resources/IMG/sprout.png" width="120" height="90" />
+			<img src="resources/IMG/sprout.png" width="120" height="90" />
+			<img src="resources/IMG/sprout.png" width="120" height="90" />
+			<img src="resources/IMG/sprout.png" width="120" height="90" />
+			<img src="resources/IMG/sprout.png" width="120" height="90" />
+			<img src="resources/IMG/sprout.png" width="120" height="90" />
 		</div>
-	</div>
-
-	<div>
-		<input type="button" id="btnSend" value="전송하기"
+		<input type="button" id="btnSend" value="(TEST CODE)메일 전송하기"
 			onclick="location.href='sendMail.jsp'" /><br>
-		<input type="button" id="btnCapsule" value="캡슐 생성"
-			onclick="location.href='createCapsule.jsp'" /><br>
 		<input type="button" id="btnOpen" value="글 조회"
 			onclick="location.href='openPost.jsp'" /><br>
 		<input type="button" id="btnLogout" value="로그아웃"
 			onclick="location.href='logout.jsp'" /><br>
 	</div>
+
 </body>
 </html>
